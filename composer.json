@@ -1,0 +1,25 @@
+{
+    "name": "masnathan/aliexpress-affiliate-php",
+    "description": "Aliexpress Affiliate Program API wrapper",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André Filipe",
+            "email": "andre.r.flip@gmail.com"
+        }
+    ],
+    "require": {
+        "masnathan/api-caller": "1.0.0",
+        "php-http/curl-client": "^1.7",
+        "guzzlehttp/psr7": "^1.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "MASNathan\\AliExpress\\": "src/"
+        }
+    }
+}
