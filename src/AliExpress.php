@@ -6,10 +6,22 @@ use MASNathan\AliExpress\Exceptions\ErrorCodeException;
 use MASNathan\AliExpress\Request\Request;
 use MASNathan\APICaller\Caller;
 
+/**
+ * Class AliExpress
+ *
+ * @package MASNathan\AliExpress
+ * @property Client $client
+ */
 class AliExpress extends Caller
 {
     public function request(Request $request)
     {
+        $requestArguments = $request->getArguments();
+
+        if (method_exists($request, 'setTrackingId') && !isset($requestArguments['trackingId'])) {
+            $request->setTrackingId($this->client->getTrackingId());
+        }
+
         $response = $this->client->get(
             $request->getSection(),
             $request->getArguments()

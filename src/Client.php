@@ -50,6 +50,14 @@ class Client extends BaseClient
     }
 
     /**
+     * @return string
+     */
+    public function getDigitalSignature()
+    {
+        return $this->digitalSignature;
+    }
+
+    /**
      * Sets the tracking ID
      *
      * @param string $trackingId
@@ -60,6 +68,14 @@ class Client extends BaseClient
         $this->trackingId = $trackingId;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTrackingId()
+    {
+        return $this->trackingId;
     }
 
     /**
