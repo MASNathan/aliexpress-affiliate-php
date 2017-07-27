@@ -15,7 +15,11 @@ abstract class Request
 
     protected function discoverSectionName()
     {
-        return str_replace('Request', '', lcfirst(pathinfo(get_called_class(), PATHINFO_FILENAME)));
+        $classNamespace = get_called_class();
+        $classNamespaceParts = explode('\\', $classNamespace);
+        $className = end($classNamespaceParts);
+
+        return str_replace('Request', '', lcfirst($className));
     }
 
     public function getSection()
